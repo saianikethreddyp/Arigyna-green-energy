@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Arignya hero animation concept</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #f4f1e8;
+        color: #121a17;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-width: 320px;
+      }
+
+      main {
+        min-height: 100svh;
+        display: grid;
+        grid-template-columns: minmax(300px, .82fr) minmax(560px, 1.38fr);
+        align-items: center;
+        overflow: hidden;
+        padding: clamp(24px, 4vw, 72px);
+        background: #f4f1e8;
+      }
+
+      .copy {
+        position: relative;
+        z-index: 2;
+        max-width: 610px;
+      }
+
+      .eyebrow {
+        margin: 0 0 22px;
+        color: #315b4d;
+        font-size: 13px;
+        font-weight: 750;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        max-width: 620px;
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(52px, 6.2vw, 104px);
+        font-weight: 500;
+        letter-spacing: -.065em;
+        line-height: .91;
+      }
+
+      h1 em {
+        color: #0e68bc;
+        font-style: normal;
+      }
+
+      .subcopy {
+        max-width: 520px;
+        margin: 28px 0 0;
+        color: #535a56;
+        font-size: clamp(17px, 1.35vw, 21px);
+        line-height: 1.55;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 34px;
+      }
+
+      button {
+        min-height: 52px;
+        border: 1px solid #17211d;
+        border-radius: 999px;
+        padding: 0 22px;
+        font: inherit;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .primary {
+        background: #17211d;
+        color: #fff;
+      }
+
+      .replay {
+        background: transparent;
+        color: #17211d;
+      }
+
+      .visual {
+        width: min(1160px, 78vw);
+        margin-left: clamp(-160px, -7vw, -40px);
+      }
+
+      .visual img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      @media (max-width: 900px) {
+        main {
+          grid-template-columns: 1fr;
+          align-content: start;
+          padding: 28px 22px 0;
+        }
+
+        h1 {
+          font-size: clamp(50px, 15vw, 76px);
+        }
+
+        .visual {
+          width: 125%;
+          margin: 4px -25% 0 3%;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="copy">
+        <p class="eyebrow">Residential rooftop solar</p>
+        <h1>Turn your roof into <em>Zero electricity bills</em></h1>
+        <p class="subcopy">
+          Complete rooftop solar support, from system design and installation to
+          net-metering and subsidy assistance.
+        </p>
+        <div class="actions">
+          <button class="primary" type="button">Get a free roof check</button>
+          <button class="replay" id="replay" type="button">Replay animation</button>
+        </div>
+      </section>
+
+      <div class="visual">
+        <img
+          id="animation"
+          src="./solar-house-wakes-v4.svg"
+          alt="Solar panels unfold onto a home and power a glowing light bulb"
+        />
+      </div>
+    </main>
+
+    <script>
+      const replayButton = document.querySelector("#replay");
+      const animation = document.querySelector("#animation");
+
+      replayButton.addEventListener("click", () => {
+        const source = "./solar-house-wakes-v4.svg";
+        animation.src = `${source}?replay=${Date.now()}`;
+      });
+    </script>
+  </body>
+</html>

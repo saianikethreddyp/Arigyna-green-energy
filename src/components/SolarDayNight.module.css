@@ -1,0 +1,396 @@
+.section {
+  padding: 112px max(20px, calc((100vw - 1380px) / 2)) 104px;
+  max-width: 100%;
+  overflow: hidden;
+  background: #dfeaf0;
+  color: #10251d;
+}
+
+.scene {
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  aspect-ratio: 1591 / 989;
+  overflow: hidden;
+  border: 1px solid rgba(16, 37, 29, 0.2);
+  border-radius: 12px;
+  background: #a9c4d2;
+  box-shadow: 0 30px 65px rgba(16, 37, 29, 0.14);
+}
+
+.imageStage {
+  position: absolute;
+  inset: -2.5% 0 0;
+  transform-origin: center bottom;
+  animation: house-lift 720ms cubic-bezier(0.18, 0.82, 0.24, 1.08) both;
+}
+
+.morningImage,
+.nightImage {
+  object-fit: cover;
+  object-position: center;
+  transition: opacity 560ms cubic-bezier(0.7, 0, 0.2, 1);
+}
+
+.morningImage {
+  opacity: 1;
+}
+
+.nightImage {
+  opacity: 0;
+}
+
+.scene[data-period="night"] .morningImage {
+  opacity: 0;
+}
+
+.scene[data-period="night"] .nightImage {
+  opacity: 1;
+}
+
+.topFade,
+.bottomFade {
+  position: absolute;
+  inset-inline: 0;
+  pointer-events: none;
+}
+
+.topFade {
+  top: 0;
+  height: 42%;
+  background: linear-gradient(
+    180deg,
+    rgba(241, 244, 239, 0.75) 0%,
+    rgba(241, 244, 239, 0.28) 52%,
+    transparent 100%
+  );
+  transition: opacity 480ms cubic-bezier(0.7, 0, 0.2, 1);
+}
+
+.scene[data-period="night"] .topFade {
+  opacity: 0.16;
+}
+
+.bottomFade {
+  bottom: 0;
+  height: 48%;
+  background: linear-gradient(
+    0deg,
+    rgba(6, 17, 20, 0.9) 0%,
+    rgba(6, 17, 20, 0.54) 38%,
+    transparent 100%
+  );
+}
+
+.sceneHeading {
+  position: absolute;
+  top: 7%;
+  left: 50%;
+  width: min(84%, 960px);
+  text-align: center;
+  transform: translateX(-50%);
+}
+
+.sceneHeading p {
+  margin: 0 0 15px;
+  color: rgba(16, 37, 29, 0.68);
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: clamp(0.55rem, 0.76vw, 0.7rem);
+  font-weight: 680;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 500ms ease;
+}
+
+.sceneHeading h2 {
+  margin: 0;
+  color: #10251d;
+  font-size: clamp(3rem, 5.2vw, 6.1rem);
+  font-weight: 580;
+  letter-spacing: -0.066em;
+  line-height: 0.94;
+  text-wrap: balance;
+  transition: color 500ms ease;
+}
+
+.scene[data-period="night"] .sceneHeading p {
+  color: rgba(255, 255, 255, 0.66);
+}
+
+.scene[data-period="night"] .sceneHeading h2 {
+  color: #fff;
+}
+
+.segmentedControl {
+  position: absolute;
+  left: 50%;
+  bottom: 25%;
+  z-index: 2;
+  width: min(92%, 390px);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.48);
+  border-radius: 7px;
+  background: rgba(8, 20, 23, 0.58);
+  box-shadow: 0 14px 30px rgba(5, 13, 16, 0.24);
+  backdrop-filter: blur(12px);
+  transform: translateX(-50%);
+}
+
+.segmentedControl button {
+  min-height: 64px;
+  display: grid;
+  place-content: center;
+  gap: 4px;
+  padding: 7px 16px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.78);
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 210ms cubic-bezier(0.22, 1, 0.36, 1),
+    color 120ms ease, transform 210ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.segmentedControl button[aria-pressed="true"] {
+  background: #f6f4ec;
+  color: #10251d;
+  transform: scale(1.018);
+}
+
+.segmentedControl button:focus-visible {
+  outline: 3px solid #62a0ff;
+  outline-offset: 3px;
+}
+
+.segmentedControl strong {
+  font-size: 0.86rem;
+  font-weight: 760;
+}
+
+.segmentedControl span {
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.035em;
+}
+
+.explanation {
+  position: absolute;
+  left: 50%;
+  bottom: 4.5%;
+  z-index: 1;
+  width: min(88%, 940px);
+  color: #fff;
+  text-align: center;
+  transform: translateX(-50%);
+  animation: copy-enter 360ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.exposureFlash {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.42);
+  mix-blend-mode: soft-light;
+  animation: exposure-flash 560ms cubic-bezier(0.7, 0, 0.2, 1) both;
+}
+
+.explanation h3 {
+  margin: 0;
+  font-size: clamp(1.55rem, 2.55vw, 3rem);
+  font-weight: 620;
+  letter-spacing: -0.048em;
+  line-height: 1.02;
+  text-wrap: balance;
+}
+
+.explanation p {
+  max-width: 860px;
+  margin: 12px auto 0;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: clamp(0.78rem, 1.05vw, 1rem);
+  line-height: 1.5;
+}
+
+.batteryNote {
+  max-width: 850px;
+  margin: 24px 0 0;
+  padding-left: 14px;
+  border-left: 2px solid rgba(16, 37, 29, 0.25);
+  color: #61747b;
+  font-size: 0.74rem;
+  line-height: 1.55;
+}
+
+@keyframes copy-enter {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 8px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes exposure-flash {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  34% {
+    opacity: 0.38;
+  }
+  58% {
+    opacity: 0.08;
+  }
+}
+
+@keyframes house-lift {
+  0% {
+    opacity: 0.58;
+    transform: translateY(8.5%) scale(1.035);
+    clip-path: inset(12% 0 0);
+  }
+  68% {
+    opacity: 1;
+    transform: translateY(-0.8%) scale(1.006);
+    clip-path: inset(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    clip-path: inset(0);
+  }
+}
+
+@media (max-width: 720px) {
+  .section {
+    padding: 74px 14px 72px;
+  }
+
+  .scene {
+    min-height: 690px;
+    aspect-ratio: auto;
+    border-radius: 9px;
+    background: #d9e5eb;
+    transition: background-color 420ms ease;
+  }
+
+  .scene[data-period="night"] {
+    background: #061a43;
+  }
+
+  .imageStage {
+    top: 176px;
+    right: 0;
+    bottom: auto;
+    left: 0;
+    height: auto;
+    aspect-ratio: 1591 / 989;
+  }
+
+  .topFade {
+    height: 176px;
+    background: linear-gradient(
+      180deg,
+      rgba(241, 244, 239, 0.66),
+      rgba(241, 244, 239, 0.18) 72%,
+      transparent
+    );
+  }
+
+  .bottomFade {
+    height: 48%;
+  }
+
+  .sceneHeading {
+    top: 28px;
+    left: 15px;
+    right: 15px;
+    width: auto;
+    transform: none;
+  }
+
+  .sceneHeading p {
+    margin-bottom: 11px;
+    font-size: 0.52rem;
+  }
+
+  .sceneHeading h2 {
+    max-width: 100%;
+    font-size: clamp(1.9rem, 8.8vw, 2.7rem);
+    letter-spacing: -0.058em;
+    overflow-wrap: normal;
+  }
+
+  .sceneHeading h2 span {
+    display: block;
+  }
+
+  .segmentedControl {
+    left: 15px;
+    right: 15px;
+    top: 416px;
+    bottom: auto;
+    width: auto;
+    transform: none;
+  }
+
+  .segmentedControl button {
+    min-width: 0;
+    min-height: 58px;
+    padding-inline: 8px;
+  }
+
+  .explanation {
+    left: 17px;
+    right: 17px;
+    top: 510px;
+    bottom: auto;
+    width: auto;
+    transform: none;
+    animation: none;
+  }
+
+  .explanation h3 {
+    max-width: 100%;
+    font-size: clamp(1.45rem, 6.8vw, 2rem);
+    letter-spacing: -0.04em;
+  }
+
+  .explanation p {
+    margin-top: 10px;
+    font-size: 0.77rem;
+    line-height: 1.45;
+  }
+
+  .batteryNote {
+    margin-inline: 6px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .morningImage,
+  .nightImage,
+  .topFade,
+  .sceneHeading p,
+  .sceneHeading h2 {
+    transition: none;
+  }
+
+  .explanation {
+    animation: none;
+  }
+
+  .exposureFlash {
+    display: none;
+  }
+
+  .imageStage {
+    animation: none;
+  }
+}

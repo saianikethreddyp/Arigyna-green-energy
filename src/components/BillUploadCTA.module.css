@@ -1,0 +1,267 @@
+.section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.86fr) minmax(460px, 0.72fr);
+  gap: clamp(60px, 10vw, 160px);
+  align-items: start;
+  padding: 112px max(20px, calc((100vw - 1380px) / 2)) 118px;
+  scroll-margin-top: 78px;
+  overflow: hidden;
+  background: #1769ff;
+  color: #fff;
+}
+
+.eyebrow {
+  margin: 0 0 22px;
+  color: rgba(255, 255, 255, 0.66);
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+}
+
+.copy h2 {
+  max-width: 760px;
+  margin: 0;
+  font-size: var(--type-section);
+  font-weight: 580;
+  letter-spacing: -0.072em;
+  line-height: 0.91;
+  text-wrap: balance;
+}
+
+.description {
+  max-width: 580px;
+  margin: 30px 0 0;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: var(--type-body);
+  line-height: 1.6;
+}
+
+.privacy {
+  max-width: 520px;
+  margin: 38px 0 0;
+  padding-left: 13px;
+  border-left: 2px solid rgba(255, 255, 255, 0.38);
+  color: rgba(255, 255, 255, 0.63);
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+.form {
+  align-self: center;
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.48);
+  border-radius: 9px;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    rgba(8, 34, 101, 0.18);
+  background-size: 18px 18px;
+}
+
+.handoff {
+  max-width: 430px;
+  margin: 0 0 22px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: .92rem;
+  line-height: 1.6;
+}
+
+.upload {
+  width: 100%;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 9px;
+  padding: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.48);
+  border-radius: 9px;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    rgba(8, 34, 101, 0.18);
+  background-size: 18px 18px;
+  color: rgba(255, 255, 255, 0.65);
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 170ms ease, transform 170ms ease;
+}
+
+.upload:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+.upload:focus-visible,
+.submit:focus-visible,
+.whatsapp:focus-visible,
+.fields input:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
+.uploadLabel {
+  max-width: 100%;
+  overflow: hidden;
+  color: #fff;
+  font-size: clamp(1.15rem, 2vw, 1.65rem);
+  font-weight: 650;
+  letter-spacing: -0.035em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.upload > span:last-child {
+  font-size: 0.68rem;
+}
+
+.fileInput {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+.fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 16px;
+  margin-top: 25px;
+}
+
+.fields label {
+  min-width: 0;
+}
+
+.fields label > span {
+  display: block;
+  margin-bottom: 8px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.65rem;
+  font-weight: 650;
+}
+
+.fields input {
+  width: 100%;
+  min-height: 50px;
+  padding: 0 13px;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  border-radius: 6px;
+  background: rgba(8, 34, 101, 0.16);
+  color: #fff;
+  font: inherit;
+  font-size: 0.88rem;
+}
+
+.fields input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.submit,
+.whatsapp {
+  min-height: 54px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 740;
+  transition: transform 160ms ease, background-color 160ms ease;
+}
+
+.submit {
+  border: 1px solid #fff;
+  background: #fff;
+  color: #10251d;
+}
+
+.whatsapp {
+  border: 1px solid rgba(255, 255, 255, 0.46);
+  background: transparent;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+}
+
+.form .whatsapp {
+  width: 100%;
+  border-color: #fff;
+  background: #fff;
+  color: #10251d;
+}
+
+.form .whatsapp:hover {
+  background: #e8f0ff;
+}
+
+.submit:hover,
+.whatsapp:hover {
+  transform: translateY(-2px);
+}
+
+.whatsapp:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.status {
+  margin: 18px 0 0;
+  padding: 12px 14px;
+  border-left: 2px solid #fff;
+  background: rgba(8, 34, 101, 0.16);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.73rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 920px) {
+  .section {
+    grid-template-columns: 1fr;
+    gap: 62px;
+  }
+
+  .copy h2 {
+    max-width: 900px;
+  }
+}
+
+@media (max-width: 620px) {
+  .section {
+    gap: 44px;
+    padding: 74px 20px 78px;
+  }
+
+  .copy h2 {
+    font-size: var(--type-section-mobile);
+    text-wrap: wrap;
+  }
+
+  .description {
+    margin-top: 22px;
+  }
+
+  .privacy {
+    margin-top: 26px;
+  }
+
+  .upload {
+    min-height: 128px;
+    padding: 20px;
+  }
+
+  .fields,
+  .actions {
+    grid-template-columns: 1fr;
+  }
+}

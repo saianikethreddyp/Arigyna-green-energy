@@ -1,15 +1,89 @@
 @import "tailwindcss";
 
-@theme inline {
-  --color-saffron: #FF9933;
-  --color-trust-blue: #1E3A8A;
-  --color-eco-green: #138808;
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-heading: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+:root {
+  --paper: #f6f4ec;
+  --ink: #10251d;
+  --blue: #1769ff;
+  --type-body: clamp(1rem, 1.3vw, 1.16rem);
+  --type-section: clamp(3rem, 5.35vw, 6rem);
+  --type-section-mobile: clamp(2.65rem, 11.5vw, 3.75rem);
+  --type-label: 0.68rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 body {
-  background-color: #ffffff;
-  color: #171717;
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  max-width: 100%;
+  overflow-x: clip;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-atkinson), "Segoe UI", Helvetica, Arial, sans-serif;
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 4px;
+}
+
+::selection {
+  background: var(--blue);
+  color: #fff;
+}
+
+@keyframes page-enter {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes section-enter {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  main > section:first-child {
+    animation: page-enter 560ms cubic-bezier(.2, .8, .2, 1) both;
+  }
+
+  @supports (animation-timeline: view()) {
+    main > section:not(:first-child) {
+      animation: section-enter linear both;
+      animation-range: entry 8% cover 28%;
+      animation-timeline: view();
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }

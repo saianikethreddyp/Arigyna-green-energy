@@ -1,0 +1,239 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1440"
+  height="720"
+  viewBox="0 0 1440 720"
+  role="img"
+  aria-labelledby="solar-roof-v2-title solar-roof-v2-desc"
+>
+  <title id="solar-roof-v2-title">Solar roof sculpture</title>
+  <desc id="solar-roof-v2-desc">
+    A wide abstract home with a prominent rooftop solar array and a large warm sun.
+  </desc>
+
+  <defs>
+    <radialGradient id="v2-sun" cx=".38" cy=".34" r=".7">
+      <stop offset="0" stop-color="#fff9d9"/>
+      <stop offset=".5" stop-color="#f7d86f"/>
+      <stop offset="1" stop-color="#eea933"/>
+    </radialGradient>
+
+    <linearGradient id="v2-panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071b36"/>
+      <stop offset=".45" stop-color="#0a4e9c"/>
+      <stop offset=".72" stop-color="#126fe0"/>
+      <stop offset="1" stop-color="#06162c"/>
+    </linearGradient>
+
+    <linearGradient id="v2-wall-front" x1="0" y1="0" x2=".9" y2="1">
+      <stop offset="0" stop-color="#fffdf5"/>
+      <stop offset="1" stop-color="#e0dccf"/>
+    </linearGradient>
+
+    <linearGradient id="v2-wall-side" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d9d6ca"/>
+      <stop offset="1" stop-color="#b9b7ae"/>
+    </linearGradient>
+
+    <linearGradient id="v2-glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#86bfff"/>
+      <stop offset=".35" stop-color="#174c8e"/>
+      <stop offset="1" stop-color="#071a31"/>
+    </linearGradient>
+
+    <linearGradient id="v2-shine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="white" stop-opacity="0"/>
+      <stop offset=".5" stop-color="white" stop-opacity=".52"/>
+      <stop offset="1" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+
+    <pattern id="v2-panel-cells" width="38" height="38" patternUnits="userSpaceOnUse">
+      <path d="M38 0H0V38" fill="none" stroke="#acd2ff" stroke-width="1.2" opacity=".5"/>
+      <circle cx="19" cy="19" r="1.6" fill="#cde4ff" opacity=".55"/>
+    </pattern>
+
+    <pattern id="v2-sun-dots" width="14" height="14" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="1.7" fill="#1771e8" opacity=".55"/>
+    </pattern>
+
+    <radialGradient id="v2-dot-mask-gradient">
+      <stop offset=".55" stop-color="black" stop-opacity="0"/>
+      <stop offset=".76" stop-color="white" stop-opacity=".7"/>
+      <stop offset="1" stop-color="white"/>
+    </radialGradient>
+
+    <mask id="v2-dot-mask">
+      <circle cx="1048" cy="218" r="286" fill="url(#v2-dot-mask-gradient)"/>
+    </mask>
+
+    <clipPath id="v2-panel-clip">
+      <rect width="600" height="300" rx="14"/>
+    </clipPath>
+
+    <filter id="v2-shadow" x="-30%" y="-40%" width="180%" height="220%">
+      <feDropShadow dx="0" dy="26" stdDeviation="24" flood-color="#14211a" flood-opacity=".2"/>
+    </filter>
+
+    <filter id="v2-soft-shadow" x="-30%" y="-40%" width="180%" height="220%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#14211a" flood-opacity=".13"/>
+    </filter>
+  </defs>
+
+  <style>
+    #v2-sun-field {
+      transform-origin: 1048px 218px;
+      animation: v2-sun-enter 1.15s cubic-bezier(.22, 1, .36, 1) both;
+    }
+
+    #v2-home {
+      animation: v2-home-enter 1s cubic-bezier(.22, 1, .36, 1) .12s both;
+    }
+
+    #v2-panels {
+      animation: v2-panel-enter .95s cubic-bezier(.22, 1, .36, 1) .38s both;
+    }
+
+    #v2-panel-shine {
+      animation: v2-shine 5.5s cubic-bezier(.4, 0, .2, 1) 1.7s infinite;
+    }
+
+    @keyframes v2-sun-enter {
+      from { opacity: 0; transform: scale(.92); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes v2-home-enter {
+      from { opacity: 0; transform: translateY(22px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes v2-panel-enter {
+      from { opacity: 0; filter: brightness(1.55); }
+      to { opacity: 1; filter: brightness(1); }
+    }
+
+    @keyframes v2-shine {
+      0%, 62% { opacity: 0; transform: translateX(-380px); }
+      70% { opacity: .68; }
+      85%, 100% { opacity: 0; transform: translateX(520px); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #v2-sun-field,
+      #v2-home,
+      #v2-panels,
+      #v2-panel-shine {
+        animation: none;
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+
+  <g id="v2-sun-field">
+    <circle cx="1048" cy="218" r="232" fill="url(#v2-sun)"/>
+    <circle
+      cx="1048"
+      cy="218"
+      r="286"
+      fill="url(#v2-sun-dots)"
+      mask="url(#v2-dot-mask)"
+      opacity=".78"
+    />
+    <circle
+      cx="1048"
+      cy="218"
+      r="264"
+      fill="none"
+      stroke="#176fe0"
+      stroke-width="2"
+      stroke-dasharray="118 620"
+      stroke-linecap="round"
+      opacity=".42"
+      transform="rotate(-18 1048 218)"
+    />
+  </g>
+
+  <ellipse cx="836" cy="629" rx="493" ry="54" fill="#0e4386" opacity=".14"/>
+  <ellipse cx="836" cy="621" rx="390" ry="31" fill="#071b36" opacity=".14"/>
+
+  <g id="v2-home" filter="url(#v2-shadow)">
+    <path
+      d="M302 407L973 227L1322 365L650 553Z"
+      fill="#e8e4d7"
+      stroke="#cbc7ba"
+      stroke-width="2"
+      stroke-linejoin="round"
+    />
+
+    <path
+      d="M302 407L650 553V699L302 554Z"
+      fill="url(#v2-wall-front)"
+      stroke="#c8c4b8"
+      stroke-width="2"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M650 553L1322 365V510L650 699Z"
+      fill="url(#v2-wall-side)"
+      stroke="#aaa89f"
+      stroke-width="2"
+      stroke-linejoin="round"
+    />
+
+    <path d="M302 407L650 553L1322 365" fill="none" stroke="#faf8ef" stroke-width="7" opacity=".75"/>
+
+    <g id="v2-front-door">
+      <path d="M474 509L568 548V666L474 627Z" fill="#14211b"/>
+      <path d="M487 529L555 557V642L487 614Z" fill="#1c2c24"/>
+      <circle cx="543" cy="606" r="4" fill="#f1c75b"/>
+    </g>
+
+    <g id="v2-side-windows" filter="url(#v2-soft-shadow)">
+      <path d="M742 559L875 522V625L742 663Z" fill="#08182d"/>
+      <path d="M753 566L864 535V612L753 644Z" fill="url(#v2-glass)"/>
+      <path d="M910 512L1043 475V578L910 616Z" fill="#08182d"/>
+      <path d="M921 519L1032 488V565L921 597Z" fill="url(#v2-glass)"/>
+      <path d="M1078 465L1211 428V531L1078 569Z" fill="#08182d"/>
+      <path d="M1089 472L1200 441V518L1089 550Z" fill="url(#v2-glass)"/>
+    </g>
+
+    <path
+      d="M738 651L1216 517"
+      fill="none"
+      stroke="#8f8e87"
+      stroke-width="2"
+      opacity=".6"
+    />
+
+    <g id="v2-panels" transform="matrix(1 -.24 .55 .28 410 356)">
+      <rect x="-18" y="-18" width="636" height="336" rx="18" fill="#0a1730" opacity=".16"/>
+      <g clip-path="url(#v2-panel-clip)">
+        <rect width="600" height="300" fill="url(#v2-panel)"/>
+        <rect width="600" height="300" fill="url(#v2-panel-cells)"/>
+        <rect id="v2-panel-shine" x="-110" y="-20" width="110" height="340" fill="url(#v2-shine)"/>
+      </g>
+
+      <g
+        fill="none"
+        stroke="#bcdcff"
+        stroke-width="4"
+        vector-effect="non-scaling-stroke"
+        opacity=".92"
+      >
+        <rect width="194" height="144" rx="6"/>
+        <rect x="203" width="194" height="144" rx="6"/>
+        <rect x="406" width="194" height="144" rx="6"/>
+        <rect y="153" width="194" height="147" rx="6"/>
+        <rect x="203" y="153" width="194" height="147" rx="6"/>
+        <rect x="406" y="153" width="194" height="147" rx="6"/>
+      </g>
+    </g>
+
+    <g id="v2-rooftop-volume">
+      <path d="M1129 288L1223 263L1282 286L1188 312Z" fill="#efebdf"/>
+      <path d="M1188 312L1282 286V350L1188 376Z" fill="#bebbb2"/>
+      <path d="M1129 288L1188 312V376L1129 352Z" fill="#dedacf"/>
+    </g>
+  </g>
+</svg>

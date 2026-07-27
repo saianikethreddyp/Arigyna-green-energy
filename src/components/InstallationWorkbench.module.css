@@ -1,0 +1,259 @@
+.workbench {
+  min-height: 0;
+  position: relative;
+  flex: 1;
+  margin: 18px -10px 14px;
+  overflow: hidden;
+  border: 1px solid rgba(13, 42, 34, .16);
+  border-radius: 8px;
+  background: #eef1ed;
+}
+
+.canvas {
+  width: 100%;
+  height: 100%;
+  min-height: 330px;
+  display: block;
+}
+
+.stageLabel {
+  fill: #10251d;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 9px;
+  font-weight: 650;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.stageValue {
+  font-size: 12px;
+  font-weight: 760;
+  letter-spacing: .045em;
+}
+
+.colorField,
+.stepOrb {
+  transition: fill 480ms ease, opacity 480ms ease, transform 600ms cubic-bezier(.22, 1, .36, 1);
+}
+
+.stepOrb {
+  transform-origin: 540px 82px;
+}
+
+.stepNumber {
+  fill: #fff;
+  font-family: var(--font-atkinson), "Segoe UI", sans-serif;
+  font-size: 56px;
+  font-weight: 620;
+  letter-spacing: -.08em;
+}
+
+.roofScene {
+  transform-origin: center;
+  transition: opacity 400ms ease, transform 650ms cubic-bezier(.22, 1, .36, 1);
+}
+
+.assessment,
+.assessmentMarkers,
+.design,
+.confirmation,
+.installation,
+.commission {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 360ms ease, transform 560ms cubic-bezier(.22, 1, .36, 1);
+}
+
+.assessmentMarkers,
+.confirmation,
+.installation,
+.commission,
+.axis {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 8px;
+  letter-spacing: .06em;
+}
+
+.scanBeam {
+  animation: workbench-scan 1.9s cubic-bezier(.45, 0, .2, 1) infinite;
+}
+
+.blueLabel { fill: #1769ff; }
+.whiteLabel { fill: #fff; font-size: 9px; letter-spacing: .08em; }
+.violetLabel { fill: #7259ff; font-size: 8px; letter-spacing: .06em; }
+.cardValue { fill: #0d2a22; font-size: 10px; font-weight: 700; }
+
+.selectedLayout { opacity: 0; }
+
+.designPanel,
+.installPanel {
+  opacity: 0;
+}
+
+.orientationArc {
+  stroke-dasharray: 9 8;
+  animation: dash-travel 2.8s linear infinite;
+}
+
+.componentStack > * {
+  transform-origin: center;
+}
+
+.mounts {
+  opacity: 0;
+}
+
+.installCable {
+  stroke-dashoffset: 90;
+}
+
+.installedInverter {
+  opacity: 0;
+}
+
+.powerPath {
+  animation: dash-travel 1.9s linear infinite;
+}
+
+.waveform {
+  stroke-dasharray: 280;
+  stroke-dashoffset: 280;
+  animation: draw-wave 1.1s ease-out .45s forwards;
+}
+
+.axis {
+  fill: #65746d;
+  font-size: 7px;
+  letter-spacing: .08em;
+}
+
+.workbench[data-step="0"] .assessment,
+.workbench[data-step="0"] .assessmentMarkers {
+  opacity: 1;
+}
+
+.workbench[data-step="1"] .design {
+  opacity: 1;
+}
+
+.workbench[data-step="1"] .selectedLayout {
+  animation: reveal-layout .7s ease-out .55s forwards;
+}
+
+.workbench[data-step="1"] .designPanel {
+  animation: reveal-module .34s ease-out calc(.65s + var(--delay)) forwards;
+}
+
+.workbench[data-step="2"] .roofScene {
+  opacity: .2;
+  transform: translate(90px, 28px) scale(.78);
+}
+
+.workbench[data-step="2"] .confirmation {
+  opacity: 1;
+  animation: state-enter .62s cubic-bezier(.22, 1, .36, 1) both;
+}
+
+.workbench[data-step="3"] .installation {
+  opacity: 1;
+}
+
+.workbench[data-step="3"] .mounts {
+  animation: reveal-layout .45s ease-out .12s forwards;
+}
+
+.workbench[data-step="3"] .installPanel {
+  animation: install-module .5s cubic-bezier(.18, 1.25, .35, 1) calc(.38s + var(--delay)) forwards;
+}
+
+.workbench[data-step="3"] .installedInverter {
+  animation: reveal-layout .45s ease-out 1.1s forwards;
+}
+
+.workbench[data-step="3"] .installCable {
+  animation: draw-cable .8s ease-out 1.2s forwards;
+}
+
+.workbench[data-step="4"] .roofScene {
+  opacity: .9;
+}
+
+.workbench[data-step="4"] .commission {
+  opacity: 1;
+  animation: state-enter .62s cubic-bezier(.22, 1, .36, 1) both;
+}
+
+.workbench[data-step="0"] .colorField { fill: #1769ff; }
+.workbench[data-step="1"] .colorField { fill: #2448d8; }
+.workbench[data-step="2"] .colorField { fill: #7259ff; }
+.workbench[data-step="3"] .colorField { fill: #ff704d; }
+.workbench[data-step="4"] .colorField { fill: #0d2540; }
+
+.workbench[data-step="0"] .stepOrb { fill: #ffcb52; }
+.workbench[data-step="1"] .stepOrb { fill: #b8f0dc; transform: scale(.88); }
+.workbench[data-step="2"] .stepOrb { fill: #ff9c78; transform: scale(1.08); }
+.workbench[data-step="3"] .stepOrb { fill: #c8f36a; transform: scale(.82); }
+.workbench[data-step="4"] .stepOrb { opacity: 0; transform: scale(1.3); }
+.workbench[data-step="4"] .stageLabel { fill: #fff; }
+
+@keyframes workbench-scan {
+  0% { opacity: 0; transform: translateX(-130px); }
+  12%, 84% { opacity: 1; }
+  100% { opacity: 0; transform: translateX(430px); }
+}
+
+@keyframes dash-travel {
+  to { stroke-dashoffset: -34; }
+}
+
+@keyframes reveal-layout {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes reveal-module {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes install-module {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes state-enter {
+  from { opacity: 0; transform: translateY(14px) scale(.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes draw-cable {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes draw-wave {
+  to { stroke-dashoffset: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .workbench *,
+  .colorField,
+  .stepOrb,
+  .roofScene,
+  .assessment,
+  .assessmentMarkers,
+  .design,
+  .confirmation,
+  .installation,
+  .commission {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .workbench[data-step="1"] .selectedLayout,
+  .workbench[data-step="1"] .designPanel,
+  .workbench[data-step="3"] .mounts,
+  .workbench[data-step="3"] .installPanel,
+  .workbench[data-step="3"] .installedInverter {
+    opacity: 1;
+  }
+}

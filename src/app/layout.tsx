@@ -1,20 +1,22 @@
 import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
+import { Atkinson_Hyperlegible_Next } from "next/font/google";
+import RoofCheckModal from "@/components/RoofCheckModal";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const atkinson = Atkinson_Hyperlegible_Next({
   subsets: ["latin"],
-});
-
-const outfit = Outfit({
-  variable: "--font-outfit",
-  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-atkinson",
+  adjustFontFallback: false,
 });
 
 export const metadata: Metadata = {
-  title: "SuryaTech Solar | India's #1 Rooftop Solar Panels",
-  description: "Get ₹0 Electricity Bills. Premium rooftop and commercial solar panel installation across India. Up to ₹78,000 Government subsidies available.",
+  title: {
+    default: "Arignya Home Solar",
+    template: "%s | Arignya",
+  },
+  description:
+    "Residential rooftop solar services across Andhra Pradesh and Telangana.",
 };
 
 export default function RootLayout({
@@ -23,11 +25,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${outfit.variable} h-full antialiased scroll-smooth`}
-    >
-      <body className="min-h-full flex flex-col font-sans bg-white text-zinc-900">{children}</body>
+    <html lang="en" className={atkinson.variable}>
+      <body>{children}<RoofCheckModal /></body>
     </html>
   );
 }

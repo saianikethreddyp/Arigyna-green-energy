@@ -1,0 +1,386 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1600"
+  height="760"
+  viewBox="0 0 1600 760"
+  role="img"
+  aria-labelledby="house-wakes-title house-wakes-desc"
+>
+  <title id="house-wakes-title">The solar house wakes up</title>
+  <desc id="house-wakes-desc">
+    Solar panels unfold onto a modern home, sunlight reaches the array, and a bulb
+    inside the house turns on.
+  </desc>
+
+  <defs>
+    <radialGradient id="v4-sun" cx=".38" cy=".3" r=".74">
+      <stop offset="0" stop-color="#fffdeb"/>
+      <stop offset=".48" stop-color="#f9df82"/>
+      <stop offset="1" stop-color="#efb33a"/>
+    </radialGradient>
+
+    <linearGradient id="v4-sky-wash" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8f5ed"/>
+      <stop offset="1" stop-color="#efede4"/>
+    </linearGradient>
+
+    <linearGradient id="v4-roof" x1=".08" y1="0" x2=".92" y2="1">
+      <stop offset="0" stop-color="#f7f3e8"/>
+      <stop offset="1" stop-color="#d4d0c5"/>
+    </linearGradient>
+
+    <linearGradient id="v4-front-wall" x1=".2" y1="0" x2=".8" y2="1">
+      <stop offset="0" stop-color="#efebe1"/>
+      <stop offset="1" stop-color="#c7c4bb"/>
+    </linearGradient>
+
+    <linearGradient id="v4-side-wall" x1="0" y1="0" x2=".8" y2="1">
+      <stop offset="0" stop-color="#fffdf7"/>
+      <stop offset="1" stop-color="#dfdbd0"/>
+    </linearGradient>
+
+    <linearGradient id="v4-window-day" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#79a7d1"/>
+      <stop offset=".32" stop-color="#285a8b"/>
+      <stop offset="1" stop-color="#081d35"/>
+    </linearGradient>
+
+    <linearGradient id="v4-window-lit" x1=".1" y1="0" x2=".9" y2="1">
+      <stop offset="0" stop-color="#f9d986"/>
+      <stop offset=".45" stop-color="#c5943e"/>
+      <stop offset="1" stop-color="#5a3a18"/>
+    </linearGradient>
+
+    <linearGradient id="v4-panel" x1=".05" y1="0" x2=".95" y2="1">
+      <stop offset="0" stop-color="#081f3e"/>
+      <stop offset=".42" stop-color="#0c59aa"/>
+      <stop offset=".72" stop-color="#1478df"/>
+      <stop offset="1" stop-color="#06182f"/>
+    </linearGradient>
+
+    <linearGradient id="v4-ray" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd96a" stop-opacity=".72"/>
+      <stop offset="1" stop-color="#ffd96a" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="v4-glint" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#fff" stop-opacity=".62"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+
+    <pattern id="v4-sun-dots" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="1.45" fill="#1672cc" opacity=".42"/>
+    </pattern>
+
+    <radialGradient id="v4-dot-mask-gradient">
+      <stop offset=".57" stop-color="#000" stop-opacity="0"/>
+      <stop offset=".82" stop-color="#fff" stop-opacity=".72"/>
+      <stop offset="1" stop-color="#fff"/>
+    </radialGradient>
+
+    <mask id="v4-dot-mask">
+      <circle cx="1276" cy="202" r="280" fill="url(#v4-dot-mask-gradient)"/>
+    </mask>
+
+    <filter id="v4-house-shadow" x="-28%" y="-36%" width="165%" height="220%">
+      <feDropShadow dx="0" dy="25" stdDeviation="25" flood-color="#14243a" flood-opacity=".18"/>
+    </filter>
+
+    <filter id="v4-panel-shadow" x="-35%" y="-45%" width="180%" height="220%">
+      <feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#07182c" flood-opacity=".22"/>
+    </filter>
+
+    <filter id="v4-bulb-glow" x="-160%" y="-160%" width="420%" height="420%">
+      <feGaussianBlur stdDeviation="16"/>
+    </filter>
+
+    <clipPath id="v4-window-clip">
+      <path d="M1048 518L1414 423V548L1048 649Z"/>
+    </clipPath>
+  </defs>
+
+  <style>
+    #v4-scene {
+      --ease-out: cubic-bezier(.22, 1, .36, 1);
+    }
+
+    #v4-sun-field {
+      transform-origin: 1276px 202px;
+      animation: v4-sun-rise 780ms var(--ease-out) both;
+    }
+
+    #v4-ground {
+      transform-origin: 1100px 688px;
+      animation: v4-ground-in 760ms var(--ease-out) 100ms both;
+    }
+
+    #v4-house {
+      animation: v4-house-in 780ms var(--ease-out) 130ms both;
+    }
+
+    .v4-panel-pop {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: v4-panel-pop 660ms cubic-bezier(.16, 1.24, .3, 1) both;
+    }
+
+    .v4-panel-pop:nth-child(1) { animation-delay: 690ms; }
+    .v4-panel-pop:nth-child(2) { animation-delay: 760ms; }
+    .v4-panel-pop:nth-child(3) { animation-delay: 830ms; }
+    .v4-panel-pop:nth-child(4) { animation-delay: 900ms; }
+    .v4-panel-pop:nth-child(5) { animation-delay: 970ms; }
+    .v4-panel-pop:nth-child(6) { animation-delay: 1040ms; }
+
+    #v4-rays {
+      transform-origin: 1190px 280px;
+      animation: v4-rays-in 700ms var(--ease-out) 1180ms both;
+    }
+
+    #v4-panel-flash {
+      animation: v4-panel-flash 620ms ease-out 1460ms both;
+    }
+
+    #v4-window-light {
+      animation: v4-window-warm 560ms ease-out 1580ms both;
+    }
+
+    #v4-bulb-aura {
+      transform-origin: 1241px 529px;
+      animation: v4-bulb-aura 700ms ease-out 1710ms both;
+    }
+
+    #v4-bulb-fill {
+      animation: v4-bulb-flicker 620ms steps(1, end) 1690ms both;
+    }
+
+    #v4-glint-pass {
+      animation: v4-glint-pass 8.5s cubic-bezier(.4, 0, .2, 1) 2.8s infinite;
+    }
+
+    @keyframes v4-sun-rise {
+      from { opacity: 0; transform: translateY(18px) scale(.94); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    @keyframes v4-ground-in {
+      from { opacity: 0; transform: scaleX(.84); }
+      to { opacity: 1; transform: scaleX(1); }
+    }
+
+    @keyframes v4-house-in {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes v4-panel-pop {
+      0% { opacity: 0; transform: translateY(-34px) rotate(-5deg) scale(.58); }
+      64% { opacity: 1; transform: translateY(3px) rotate(.8deg) scale(1.045); }
+      82% { transform: translateY(-2px) rotate(-.3deg) scale(.985); }
+      100% { opacity: 1; transform: translateY(0) rotate(0) scale(1); }
+    }
+
+    @keyframes v4-rays-in {
+      from { opacity: 0; transform: translate(22px, -16px) scale(.92); }
+      to { opacity: .72; transform: translate(0, 0) scale(1); }
+    }
+
+    @keyframes v4-panel-flash {
+      0% { opacity: 0; }
+      35% { opacity: .72; }
+      100% { opacity: 0; }
+    }
+
+    @keyframes v4-window-warm {
+      0% { opacity: 0; }
+      40% { opacity: .22; }
+      100% { opacity: .78; }
+    }
+
+    @keyframes v4-bulb-aura {
+      0% { opacity: 0; transform: scale(.45); }
+      30% { opacity: .92; transform: scale(1.08); }
+      43% { opacity: .12; transform: scale(.84); }
+      58% { opacity: .86; transform: scale(1.04); }
+      100% { opacity: .72; transform: scale(1); }
+    }
+
+    @keyframes v4-bulb-flicker {
+      0% { fill: #d8dde1; }
+      28% { fill: #fff5c6; }
+      40% { fill: #d8dde1; }
+      56%, 100% { fill: #fff4b8; }
+    }
+
+    @keyframes v4-glint-pass {
+      0%, 70% { opacity: 0; transform: translateX(-210px); }
+      76% { opacity: .56; }
+      86%, 100% { opacity: 0; transform: translateX(640px); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #v4-sun-field,
+      #v4-ground,
+      #v4-house,
+      .v4-panel-pop,
+      #v4-rays,
+      #v4-panel-flash,
+      #v4-window-light,
+      #v4-bulb-aura,
+      #v4-bulb-fill,
+      #v4-glint-pass {
+        animation: none;
+        opacity: 1;
+        transform: none;
+      }
+
+      #v4-panel-flash,
+      #v4-glint-pass {
+        opacity: 0;
+      }
+
+      #v4-window-light { opacity: .78; }
+      #v4-bulb-aura { opacity: .72; }
+      #v4-bulb-fill { fill: #fff4b8; }
+      #v4-rays { opacity: .72; }
+    }
+  </style>
+
+  <g id="v4-scene">
+    <rect width="1600" height="760" fill="url(#v4-sky-wash)"/>
+
+    <g id="v4-sun-field">
+      <circle cx="1276" cy="202" r="218" fill="url(#v4-sun)"/>
+      <circle
+        cx="1276"
+        cy="202"
+        r="280"
+        fill="url(#v4-sun-dots)"
+        mask="url(#v4-dot-mask)"
+        opacity=".74"
+      />
+    </g>
+
+    <g id="v4-rays" opacity="0">
+      <path d="M1194 272L1260 283L1123 389L1054 378Z" fill="url(#v4-ray)"/>
+      <path d="M1288 279L1348 305L1248 395L1183 376Z" fill="url(#v4-ray)" opacity=".84"/>
+      <path d="M1380 318L1423 353L1360 416L1308 389Z" fill="url(#v4-ray)" opacity=".62"/>
+    </g>
+
+    <g id="v4-ground">
+      <ellipse cx="1100" cy="690" rx="474" ry="52" fill="#26537f" opacity=".12"/>
+      <ellipse cx="1140" cy="681" rx="336" ry="30" fill="#071a31" opacity=".11"/>
+    </g>
+
+    <g id="v4-house" filter="url(#v4-house-shadow)">
+      <path d="M641 407L1122 286L1482 405L988 538Z" fill="url(#v4-roof)"/>
+      <path d="M988 538L1482 405V590L988 730Z" fill="url(#v4-front-wall)"/>
+      <path d="M641 407L988 538V730L641 596Z" fill="url(#v4-side-wall)"/>
+
+      <path d="M1026 516L1438 407" fill="none" stroke="#fffdf8" stroke-width="7" opacity=".78"/>
+
+      <path d="M1048 518L1414 423V548L1048 649Z" fill="url(#v4-window-day)"/>
+      <path
+        id="v4-window-light"
+        d="M1048 518L1414 423V548L1048 649Z"
+        fill="url(#v4-window-lit)"
+        opacity="0"
+      />
+
+      <g clip-path="url(#v4-window-clip)" opacity=".44">
+        <path d="M1167 486V616M1290 453V582" fill="none" stroke="#9fc5e4" stroke-width="6"/>
+        <path d="M1070 619L1393 532" fill="none" stroke="#f0e1b3" stroke-width="3" opacity=".45"/>
+      </g>
+
+      <path d="M811 469L986 538V730L811 662Z" fill="#ebe7dc"/>
+      <path d="M853 531L929 560V686L853 657Z" fill="#102921"/>
+      <path d="M865 550L917 570V664L865 644Z" fill="#17382e"/>
+      <circle cx="905" cy="628" r="4.5" fill="#efc458"/>
+
+      <g filter="url(#v4-panel-shadow)">
+        <path d="M796 494L950 455L1030 484L873 526Z" fill="#102b47"/>
+        <path d="M873 526L1030 484V497L873 540Z" fill="#071a30"/>
+      </g>
+
+      <g id="v4-panels" filter="url(#v4-panel-shadow)">
+        <g class="v4-panel-pop">
+          <g transform="translate(783 348)">
+            <path d="M0 32L139 0L180 31L40 65Z" fill="url(#v4-panel)" stroke="#b8d9f5" stroke-width="3"/>
+            <path d="M46 21L61 60M92 10L108 49M20 47L159 15" fill="none" stroke="#90c3ee" stroke-width="1" opacity=".58"/>
+          </g>
+        </g>
+        <g class="v4-panel-pop">
+          <g transform="translate(927 313)">
+            <path d="M0 32L139 0L180 31L40 65Z" fill="url(#v4-panel)" stroke="#b8d9f5" stroke-width="3"/>
+            <path d="M46 21L61 60M92 10L108 49M20 47L159 15" fill="none" stroke="#90c3ee" stroke-width="1" opacity=".58"/>
+          </g>
+        </g>
+        <g class="v4-panel-pop">
+          <g transform="translate(1071 278)">
+            <path d="M0 32L139 0L180 31L40 65Z" fill="url(#v4-panel)" stroke="#b8d9f5" stroke-width="3"/>
+            <path d="M46 21L61 60M92 10L108 49M20 47L159 15" fill="none" stroke="#90c3ee" stroke-width="1" opacity=".58"/>
+          </g>
+        </g>
+        <g class="v4-panel-pop">
+          <g transform="translate(824 416)">
+            <path d="M0 32L139 0L180 31L40 65Z" fill="url(#v4-panel)" stroke="#b8d9f5" stroke-width="3"/>
+            <path d="M46 21L61 60M92 10L108 49M20 47L159 15" fill="none" stroke="#90c3ee" stroke-width="1" opacity=".58"/>
+          </g>
+        </g>
+        <g class="v4-panel-pop">
+          <g transform="translate(968 381)">
+            <path d="M0 32L139 0L180 31L40 65Z" fill="url(#v4-panel)" stroke="#b8d9f5" stroke-width="3"/>
+            <path d="M46 21L61 60M92 10L108 49M20 47L159 15" fill="none" stroke="#90c3ee" stroke-width="1" opacity=".58"/>
+          </g>
+        </g>
+        <g class="v4-panel-pop">
+          <g transform="translate(1112 346)">
+            <path d="M0 32L139 0L180 31L40 65Z" fill="url(#v4-panel)" stroke="#b8d9f5" stroke-width="3"/>
+            <path d="M46 21L61 60M92 10L108 49M20 47L159 15" fill="none" stroke="#90c3ee" stroke-width="1" opacity=".58"/>
+          </g>
+        </g>
+      </g>
+
+      <path
+        id="v4-panel-flash"
+        d="M783 380L1210 278L1292 377L824 481Z"
+        fill="url(#v4-glint)"
+        opacity="0"
+      />
+
+      <g id="v4-bulb">
+        <path d="M1241 460V499" fill="none" stroke="#202a2e" stroke-width="4"/>
+        <circle
+          id="v4-bulb-aura"
+          cx="1241"
+          cy="529"
+          r="45"
+          fill="#ffd867"
+          opacity="0"
+          filter="url(#v4-bulb-glow)"
+        />
+        <path
+          id="v4-bulb-fill"
+          d="M1225 519C1225 509 1232 502 1241 502C1250 502 1257 509 1257 519C1257 526 1253 531 1249 535V544H1233V535C1229 531 1225 526 1225 519Z"
+          fill="#d8dde1"
+          stroke="#263136"
+          stroke-width="3"
+          stroke-linejoin="round"
+        />
+        <path d="M1234 550H1248M1236 556H1246" fill="none" stroke="#263136" stroke-width="3" stroke-linecap="round"/>
+      </g>
+
+      <g clip-path="url(#v4-window-clip)">
+        <rect
+          id="v4-glint-pass"
+          x="975"
+          y="392"
+          width="92"
+          height="290"
+          fill="url(#v4-glint)"
+          transform="rotate(-12 1021 537)"
+        />
+      </g>
+    </g>
+  </g>
+</svg>
