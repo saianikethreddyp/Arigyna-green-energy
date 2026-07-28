@@ -26,7 +26,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={atkinson.variable}>
-      <body>{children}<RoofCheckModal /></body>
+      <body>
+        {children}
+        <RoofCheckModal />
+      </body>
     </html>
   );
 }

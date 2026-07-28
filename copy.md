@@ -28,7 +28,7 @@ Navigation:
 
 Primary action:
 
-> Get a free roof check
+> WhatsApp us
 
 Mobile action:
 
@@ -66,7 +66,7 @@ Qualification:
 
 Primary CTA:
 
-> Get a free roof check
+> View solar packages
 
 Secondary CTA:
 
@@ -223,7 +223,7 @@ Eyebrow:
 
 Headline:
 
-> From your first roof check to commissioning
+> From system design to commissioning
 
 Copy:
 
@@ -403,7 +403,7 @@ Copy:
 
 Primary CTA:
 
-> Get a free roof check
+> View solar packages
 
 Secondary CTA:
 
@@ -550,7 +550,7 @@ Copy:
 
 CTA:
 
-> Get my roof checked
+> Enquire about home solar
 
 ## Subsidy & Process page
 
@@ -727,7 +727,7 @@ CTA:
 
 Drawer title:
 
-> Get a free roof check
+> Home solar enquiry
 
 Introductory copy:
 
@@ -775,7 +775,7 @@ Consent copy:
 
 Submit button:
 
-> Request my roof check
+> Send my solar enquiry
 
 Alternative action:
 
@@ -819,7 +819,7 @@ General error:
 
 Prefilled message:
 
-> Hello Arignya, I would like a free roof check for my home. My city or PIN code is [location], and my average monthly electricity bill is approximately ₹[amount].
+> Hello Arignya, I would like to enquire about home solar. My city or PIN code is [location], and my average monthly electricity bill is approximately ₹[amount].
 
 ## Footer
 
@@ -840,7 +840,7 @@ Footer navigation:
 - Home
 - Home Solar
 - Subsidy & Process
-- Get a roof check
+- Contact Arignya
 - Privacy
 - Terms
 
@@ -855,4 +855,3 @@ Claims note:
 Copyright:
 
 > © 2026 [Approved legal entity]. All rights reserved.
-

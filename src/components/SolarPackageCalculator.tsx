@@ -230,7 +230,7 @@ export default function SolarPackageCalculator({
         </h2>
         <span>
           Tell us what is already on your bill. We will show the compatible
-          listed packages and what still needs a roof check.
+          listed packages and what still requires a site assessment.
         </span>
       </header>
 
@@ -485,8 +485,8 @@ export default function SolarPackageCalculator({
               </dl>
             </section>
 
-            <section aria-labelledby="roof-check-title">
-              <h4 id="roof-check-title">Needs a roof check</h4>
+            <section aria-labelledby="site-assessment-title">
+              <h4 id="site-assessment-title">Requires a site assessment</h4>
               <ul>
                 <li>Usable roof area</li>
                 <li>Roof structure and mounting requirements</li>
@@ -543,7 +543,7 @@ export default function SolarPackageCalculator({
             >
               {submissionState === "sending"
                 ? "Sending…"
-                : "Confirm this with a free roof check"}
+                : "Send my solar enquiry"}
             </button>
             <button
               type="button"
@@ -593,7 +593,7 @@ export default function SolarPackageCalculator({
             <div>
               <span>{confirmedConnection}</span>
               <span>{getSolarModuleLabel(moduleOption)} modules</span>
-              <a href="#plan-title">Complete plan and roof check</a>
+              <a href="#plan-title">Complete plan and site assessment</a>
             </div>
           ) : null}
         </div>

@@ -37,11 +37,11 @@ export default function SolarHero() {
         </p>
         <div className="solar-hero__actions">
           <Link href="/residential" className="solar-hero__primary-action">
-            Get a free roof check
+            View home solar packages
             <ArrowRight aria-hidden="true" size={19} strokeWidth={2} />
           </Link>
-          <Link href="/residential" className="solar-hero__secondary-action">
-            View solar packages
+          <Link href="/subsidies" className="solar-hero__secondary-action">
+            Subsidy &amp; process
           </Link>
         </div>
       </div>

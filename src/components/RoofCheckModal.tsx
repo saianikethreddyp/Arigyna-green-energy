@@ -7,6 +7,7 @@ const whatsappNumber = "919063092424";
 
 export default function RoofCheckModal() {
   const [open, setOpen] = useState(false);
+  const [source, setSource] = useState("Website");
   const dialogRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -31,6 +32,7 @@ export default function RoofCheckModal() {
       if (!link) return;
 
       event.preventDefault();
+      setSource(link.dataset.leadSource || link.textContent?.trim() || "Website");
       setOpen(true);
     }
 
@@ -60,12 +62,13 @@ export default function RoofCheckModal() {
     event.preventDefault();
     const values = new FormData(event.currentTarget);
     const message = [
-      "Hello Arignya, I would like a free roof check for my home.",
+      "Hello Arignya, I would like to enquire about home solar.",
       "",
       `Name: ${String(values.get("name") ?? "").trim()}`,
       `Phone: ${String(values.get("phone") ?? "").trim()}`,
       `City or PIN code: ${String(values.get("location") ?? "").trim()}`,
       `Average monthly electricity bill: ${String(values.get("monthlyBill") ?? "").trim()}`,
+      `Enquiry source: ${source}`,
       "",
       "Please attach your latest electricity bill (PDF, JPG or PNG) in this WhatsApp chat.",
     ].join("\n");
@@ -92,10 +95,10 @@ export default function RoofCheckModal() {
       >
         <div className={styles.header}>
           <div>
-            <p>Free roof check</p>
-            <h2 id="roof-check-modal-title">Start with what you know.</h2>
+            <p>Home solar enquiry</p>
+            <h2 id="roof-check-modal-title">Tell us about your home.</h2>
           </div>
-          <button type="button" onClick={() => setOpen(false)} aria-label="Close roof check form">Close</button>
+          <button type="button" onClick={() => setOpen(false)} aria-label="Close solar enquiry form">Close</button>
         </div>
 
         <p className={styles.intro}>Share a few details about your home. WhatsApp will open with your enquiry ready to send.</p>

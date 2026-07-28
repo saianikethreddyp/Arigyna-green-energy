@@ -14,6 +14,7 @@ const links = [
 export default function Navbar() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const homeCta = pathname === "/";
 
   return (
     <>
@@ -34,7 +35,15 @@ export default function Navbar() {
         </nav>
 
         <div className={styles.controls}>
-          <Link href="/#roof-check" className={styles.cta}>Get a free roof check</Link>
+          <a
+            href={homeCta ? "#roof-check" : "https://wa.me/919063092424"}
+            className={styles.cta}
+            target={homeCta ? undefined : "_blank"}
+            rel={homeCta ? undefined : "noreferrer"}
+            data-lead-source={homeCta ? "Navigation" : undefined}
+          >
+            {homeCta ? "Request a solar quote" : "WhatsApp us"}
+          </a>
           <button className={styles.menuButton} type="button" aria-expanded={menuOpen} aria-controls="mobile-navigation" aria-label={menuOpen ? "Close navigation" : "Open navigation"} onClick={() => setMenuOpen((open) => !open)}>
             <span /><span /><span />
           </button>
@@ -50,8 +59,15 @@ export default function Navbar() {
         inert={!menuOpen}
       >
           {links.map(([href, label]) => <Link key={href} href={href} aria-current={pathname === href ? "page" : undefined} onClick={() => setMenuOpen(false)}>{label}</Link>)}
-          <Link href="/#roof-check" onClick={() => setMenuOpen(false)}>Get a free roof check</Link>
-          <a href="https://wa.me/919063092424" target="_blank" rel="noreferrer">WhatsApp us</a>
+          <a
+            href={homeCta ? "#roof-check" : "https://wa.me/919063092424"}
+            target={homeCta ? undefined : "_blank"}
+            rel={homeCta ? undefined : "noreferrer"}
+            data-lead-source={homeCta ? "Mobile navigation" : undefined}
+            onClick={() => setMenuOpen(false)}
+          >
+            {homeCta ? "Request a solar quote" : "WhatsApp us"}
+          </a>
       </nav>
     </>
   );

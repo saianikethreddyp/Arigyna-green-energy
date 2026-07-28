@@ -1,0 +1,40 @@
+.canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.sun {
+  will-change: transform;
+}
+
+.scene {
+  will-change: opacity, transform;
+}
+
+.frame {
+  fill: #53665e;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 8px;
+  letter-spacing: .08em;
+}
+
+.frame path {
+  fill: none;
+  stroke: #10251d;
+  stroke-opacity: .2;
+  stroke-width: 1.2;
+}
+
+@media (max-width: 720px) {
+  .canvas {
+    min-width: 620px;
+    transform: translateX(var(--mobile-pan, -143px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .canvas {
+    transform: none;
+  }
+}

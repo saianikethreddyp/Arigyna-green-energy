@@ -48,7 +48,10 @@ export default function Footer() {
           <Link href="/">Home</Link>
           <Link href="/residential">Home Solar</Link>
           <Link href="/subsidies">Subsidy &amp; Process</Link>
-          <Link href="/#roof-check">Get a roof check</Link>
+          <Link href="/#roof-check" data-lead-source="Footer">
+            Request a solar quote
+          </Link>
+          <a href="mailto:arignyagreenenergies@gmail.com">Contact Arignya</a>
         </nav>
       </div>
 

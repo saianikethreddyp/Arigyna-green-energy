@@ -5,6 +5,7 @@ import InstallationStory from "@/components/InstallationStory";
 import Navbar from "@/components/Navbar";
 import SolarDayNight from "@/components/SolarDayNight";
 import SolarRoofEngine from "@/components/SolarRoofEngine";
+import WhySolar from "@/components/WhySolar";
 import { solarPackages } from "@/data/solar-packages";
 import styles from "./page.module.css";
 
@@ -40,8 +41,12 @@ export default function Home() {
               </p>
 
               <div className={styles.heroActions}>
-                <a className={styles.primaryButton} href="#roof-check">
-                  Get a free roof check
+                <a
+                  className={styles.primaryButton}
+                  href="#roof-check"
+                  data-lead-source="Homepage hero"
+                >
+                  Request a solar quote
                 </a>
                 <a className={styles.secondaryButton} href="#packages">
                   View solar packages
@@ -60,6 +65,8 @@ export default function Home() {
           </div>
 
         </section>
+
+        <WhySolar />
 
         <section id="packages" className={styles.packages} aria-labelledby="packages-title">
           <div className={styles.packageIntro}>

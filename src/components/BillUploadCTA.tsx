@@ -12,7 +12,13 @@ export default function BillUploadCTA() {
 
       <div className={styles.form}>
         <p className={styles.handoff}>Your name, phone number, city or PIN code, and average monthly bill will be included in your WhatsApp message.</p>
-        <a className={styles.whatsapp} href="#roof-check">Open roof check form</a>
+        <a
+          className={styles.whatsapp}
+          href="#roof-check"
+          data-lead-source="Homepage closing CTA"
+        >
+          Start my solar enquiry
+        </a>
       </div>
     </section>
   );

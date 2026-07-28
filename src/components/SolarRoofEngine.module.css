@@ -88,12 +88,9 @@
   animation: draw-cable .85s ease-out 3s forwards;
 }
 
-.energyPath {
-  stroke: #1769ff;
-  stroke-width: 3;
-  stroke-dasharray: 8 12;
+.led {
   opacity: 0;
-  animation: energy-flow 2.8s linear 4.25s infinite;
+  animation: led-pulse 2s ease-in-out 4.9s infinite;
 }
 
 .landscape {
@@ -189,10 +186,23 @@
   to { stroke-dashoffset: 0; }
 }
 
+.energyPath {
+  stroke: #1769ff;
+  stroke-width: 3;
+  stroke-dasharray: 8 12;
+  opacity: 0;
+  animation: energy-flow 2.8s linear 4.25s infinite;
+}
+
 @keyframes energy-flow {
   0% { opacity: 0; stroke-dashoffset: 40; }
   18%, 82% { opacity: 1; }
   100% { opacity: 0; stroke-dashoffset: -20; }
+}
+
+@keyframes led-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .3; }
 }
 
 @media (max-width: 720px) {
@@ -226,7 +236,8 @@
   .cableBase,
   .energyPath,
   .landscape,
-  .compass {
+  .compass,
+  .led {
     animation: none;
     opacity: 1;
     stroke-dashoffset: 0;
