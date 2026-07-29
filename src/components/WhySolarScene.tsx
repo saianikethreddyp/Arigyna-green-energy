@@ -308,7 +308,7 @@ export default function WhySolarScene({ progress }: { progress: number }) {
             <rect y="3.15" width="8" height=".25" fill="#eee9de" />
             <rect y="3.37" width="8" height=".1" fill="#8f918a" />
             <rect width="8" height=".22" fill="#aaa194" />
-            <Window x=".42" width={2.1} height={1.9} />
+            <Window x={0.42} width={2.1} height={1.9} />
             <rect x="2.84" y=".38" width="1.58" height="2.72" fill="#2a3532" opacity=".4" />
             <rect x="2.78" y="2.92" width="1.7" height=".24" fill="#172b28" opacity=".28" />
             <rect x="2.99" y=".52" width="1.28" height="2.45" fill="#68482e" />
@@ -361,7 +361,7 @@ export default function WhySolarScene({ progress }: { progress: number }) {
             <rect y="3.15" width="5.5" height=".25" fill="#dbe0da" />
             <rect y="3.37" width="5.5" height=".1" fill="#858e88" />
             <rect width="5.5" height=".22" fill="#7f8b84" />
-            <Window x=".4" width={2.15} height={1.9} />
+            <Window x={0.4} width={2.15} height={1.9} />
             <Window x={2.88} width={2.12} height={1.9} />
             <path
               d="M.28 2.98H5.18"
