@@ -2,13 +2,15 @@ import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import SolarPackageCalculator from "@/components/SolarPackageCalculator";
+import { createPageMetadata } from "@/lib/seo";
 import styles from "./page.module.css";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Home Solar Packages | Arignya",
   description:
     "Compare residential rooftop solar packages and understand what is included in an Arignya installation across Andhra Pradesh and Telangana.",
-};
+  path: "/residential",
+});
 
 type ResidentialProps = {
   searchParams: Promise<{ system?: string | string[] }>;

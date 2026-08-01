@@ -2,13 +2,15 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import { createPageMetadata } from "@/lib/seo";
 import styles from "./page.module.css";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Commercial Rooftop Solar | Arignya",
   description:
     "Start a commercial rooftop solar discussion with Arignya. We assess site context, electricity use and project requirements before recommending a path.",
-};
+  path: "/commercial",
+});
 
 const projectInputs = [
   "A recent electricity bill or consumption summary",

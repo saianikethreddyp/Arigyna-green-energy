@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Atkinson_Hyperlegible_Next } from "next/font/google";
+import OrganizationJsonLd from "@/components/OrganizationJsonLd";
 import RoofCheckModal from "@/components/RoofCheckModal";
+import { siteUrl } from "@/lib/site";
 import "./globals.css";
 
 const atkinson = Atkinson_Hyperlegible_Next({
@@ -11,12 +13,33 @@ const atkinson = Atkinson_Hyperlegible_Next({
 });
 
 export const metadata: Metadata = {
+  metadataBase: siteUrl ? new URL(siteUrl) : undefined,
   title: {
     default: "Arignya Home Solar",
-    template: "%s | Arignya",
+    template: "%s",
   },
   description:
     "Residential rooftop solar services across Andhra Pradesh and Telangana.",
+  applicationName: "Arignya",
+  authors: [{ name: "Arignya Green Energy Private Limited" }],
+  creator: "Arignya Green Energy Private Limited",
+  publisher: "Arignya Green Energy Private Limited",
+  formatDetection: {
+    address: false,
+    email: false,
+    telephone: false,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -27,6 +50,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={atkinson.variable}>
       <body>
+        <OrganizationJsonLd />
         {children}
         <RoofCheckModal />
       </body>
