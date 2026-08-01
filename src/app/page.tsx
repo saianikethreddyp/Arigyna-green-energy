@@ -7,13 +7,15 @@ import SolarDayNight from "@/components/SolarDayNight";
 import SolarRoofEngine from "@/components/SolarRoofEngine";
 import WhySolar from "@/components/WhySolar";
 import { solarPackages } from "@/data/solar-packages";
+import { createPageMetadata } from "@/lib/seo";
 import styles from "./page.module.css";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Arignya Home Solar | Rooftop Solar in Andhra Pradesh and Telangana",
   description:
     "Residential rooftop solar design, installation, net-metering coordination, loan facilitation and subsidy assistance across Andhra Pradesh and Telangana.",
-};
+  path: "/",
+});
 
 export default function Home() {
   return (

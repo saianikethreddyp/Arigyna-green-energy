@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import { createPageMetadata } from "@/lib/seo";
 import styles from "./page.module.css";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "PM Surya Ghar Subsidy and Solar Process | Arignya",
   description:
     "Understand residential solar subsidy assistance, loan facilitation, net-metering coordination and the Arignya installation process.",
-};
+  path: "/subsidies",
+});
 
 const processSteps = [
   ["01", "Roof assessment", "Send us your bill and location. We review your expected system requirement and confirm whether we can service your location."],
@@ -51,7 +54,7 @@ export default function Subsidies() {
           <div className={styles.heroDetails}>
             <p>We help you understand the system, documents and coordination involved. Government benefits, bank loans and DISCOM approvals remain subject to the rules and decisions of the respective authorities.</p>
             <div className={styles.actions}>
-              <a className={styles.primaryButton} href="/#roof-check">Check my roof and bill</a>
+              <Link className={styles.primaryButton} href="/#roof-check">Check my roof and bill</Link>
               <a className={styles.secondaryButton} href="#process">See the process</a>
             </div>
           </div>
@@ -122,7 +125,7 @@ export default function Subsidies() {
 
         <section className={styles.loan} aria-labelledby="loan-title">
           <div><p className={styles.eyebrow}>Loan facilitation</p><h2 id="loan-title">Planning to use a bank loan?</h2></div>
-          <div><p>We can help you begin the loan application process. Loan approval, the sanctioned amount, interest rate, documentation and disbursement are decided by the lending bank.</p><p>You may need to visit the bank and complete its formalities directly. If the sanctioned amount is lower than the final quotation, the difference must be paid before the order is processed.</p><a className={styles.primaryButton} href="/#roof-check">Ask about loan facilitation</a></div>
+          <div><p>We can help you begin the loan application process. Loan approval, the sanctioned amount, interest rate, documentation and disbursement are decided by the lending bank.</p><p>You may need to visit the bank and complete its formalities directly. If the sanctioned amount is lower than the final quotation, the difference must be paid before the order is processed.</p><Link className={styles.primaryButton} href="/#roof-check">Ask about loan facilitation</Link></div>
         </section>
 
         <section className={styles.faq} aria-labelledby="faq-title">
@@ -134,7 +137,7 @@ export default function Subsidies() {
           <p className={styles.eyebrow}>Start with what you already have</p>
           <h2 id="final-title">Start with the information you already have.</h2>
           <p>Send your latest electricity bill and location. We will explain the next step without asking you to commit immediately.</p>
-          <a className={styles.primaryButton} href="/#roof-check">Send my electricity bill</a>
+          <Link className={styles.primaryButton} href="/#roof-check">Send my electricity bill</Link>
         </section>
       </main>
       <Footer />
