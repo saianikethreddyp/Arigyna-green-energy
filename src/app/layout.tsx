@@ -29,6 +29,9 @@ export const metadata: Metadata = {
     email: false,
     telephone: false,
   },
+  icons: {
+    icon: "/arignya-logo-client.png",
+  },
   robots: {
     index: true,
     follow: true,
