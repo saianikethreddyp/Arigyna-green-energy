@@ -41,6 +41,9 @@ export default function Footer() {
           <a href="mailto:arignyagreenenergies@gmail.com">
             arignyagreenenergies@gmail.com
           </a>
+          <a href="mailto:info@arignyagreenenergy.com">
+            info@arignyagreenenergy.com
+          </a>
         </div>
 
         <nav className={styles.links} aria-label="Footer navigation">
