@@ -6,9 +6,9 @@ import { createPageMetadata } from "@/lib/seo";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Home Solar Packages | Arignya",
+  title: "Home Solar Packages in Hyderabad | Arignya",
   description:
-    "Compare residential rooftop solar packages and understand what is included in an Arignya installation across Andhra Pradesh and Telangana.",
+    "Compare home solar packages for Hyderabad, Telangana and Andhra Pradesh, including residential rooftop installation, net-metering coordination and subsidy support.",
   path: "/residential",
 });
 

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     template: "%s",
   },
   description:
-    "Residential rooftop solar services across Andhra Pradesh and Telangana.",
+    "Residential rooftop solar installation, net-metering coordination and subsidy assistance in Hyderabad, Telangana and Andhra Pradesh.",
   applicationName: "Arignya",
   authors: [{ name: "Arignya Green Energy Private Limited" }],
   creator: "Arignya Green Energy Private Limited",

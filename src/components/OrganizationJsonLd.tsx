@@ -17,6 +17,14 @@ export default function OrganizationJsonLd() {
         ...(url ? { url } : {}),
         ...(url ? { logo: absoluteUrl("/arignya-logo-client.png") } : {}),
         image: absoluteUrl("/concepts/home-hero-human-v2.png"),
+        description:
+          "Residential rooftop solar design, installation, net-metering coordination and subsidy assistance in Hyderabad, Telangana and Andhra Pradesh.",
+        serviceType: [
+          "Residential rooftop solar installation",
+          "Solar system design",
+          "Net-metering coordination",
+          "Solar subsidy assistance",
+        ],
         telephone: "+91 90630 92424",
         email: "arignyagreenenergies@gmail.com",
         address: {
@@ -29,6 +37,7 @@ export default function OrganizationJsonLd() {
           addressCountry: "IN",
         },
         areaServed: [
+          { "@type": "City", name: "Hyderabad" },
           { "@type": "AdministrativeArea", name: "Andhra Pradesh" },
           { "@type": "AdministrativeArea", name: "Telangana" },
         ],

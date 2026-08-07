@@ -7,9 +7,9 @@ import { createPageMetadata } from "@/lib/seo";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "PM Surya Ghar Subsidy and Solar Process | Arignya",
+  title: "PM Surya Ghar Subsidy in Telangana | Arignya",
   description:
-    "Understand residential solar subsidy assistance, loan facilitation, net-metering coordination and the Arignya installation process.",
+    "Understand PM Surya Ghar subsidy support, rooftop solar installation, loan facilitation and net-metering coordination for homes in Hyderabad and Telangana.",
   path: "/subsidies",
 });
 
